@@ -3,7 +3,7 @@ import numpy as np
 import pathlib
 import scipy as sp
 import math 
-from metadata import RecordingLocation, RecordingMetadata
+from custom_types import RecordingLocation, RecordingMetadata
 from typing import Tuple, List
 
 class RecordingTooShortException(Exception):
