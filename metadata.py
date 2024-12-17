@@ -4,22 +4,22 @@ from typing import Optional, Tuple
 from enum import Enum
 
 class RecordingLocation(Enum):
-    TV = "TV",
-    MV = "MV",
-    PV = "PV",
-    AV = "AV",
-    PHC = "PhC"
+    TV = "TV"
+    MV = "MV"
+    PV = "PV"
+    AV = "AV"
+    PHC = "Phc"
 
 class MurmurStatus(Enum):
-    PRESENT = 1,
-    ABSENT = 0,
+    PRESENT = 1
+    ABSENT = 0
     UNKNOWN = -1
 
 class HeartSound(Enum):
-    UNANNOTATED = 0,
-    S1WAVE = 1,
-    SYSTOLIC = 2,
-    S2WAVE = 3,
+    UNANNOTATED = 0
+    S1WAVE = 1
+    SYSTOLIC = 2
+    S2WAVE = 3
     DIASTOLIC = 4
 
 @dataclass
@@ -27,7 +27,6 @@ class RecordingMetadata:
     """Store metadata for each recoding"""
     patient_id: str
     location: RecordingLocation
-    murmur_present: MurmurStatus
     sampling_rate: int  # Hz
     n_samples: int     # duration = sampling rate * n_samples
     # segment_window = (index_start, index_end)
