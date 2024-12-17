@@ -105,6 +105,8 @@ data/
 input/
 saved/
 datasets/
+log/
+circor_data/
 
 # editor, os cache directory
 .vscode/
