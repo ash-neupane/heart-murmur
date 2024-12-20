@@ -10,5 +10,8 @@ Audio Signals from 4 different locations in the chest, annotated.
 
 ## To get started
 See curation_pipeline.ipynb
+Don't forget to download the dataset with `download.sh`. 
+If you have the data downloaded already, update the ROOT_DIR parameter in the jupyter notebook. 
+That has to point to the parent directory of `training_data.csv`.
 
 `python main.py` to run the mock training loop.
