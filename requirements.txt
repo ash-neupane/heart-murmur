@@ -2,5 +2,8 @@ numpy==1.25.2
 pandas==2.0.3
 scipy==1.11.4
 torch==2.2.1
+torchaudio==2.2.1
 wget==3.2
 matplotlib==3.10
+torchaudio==2.5.1
+jupyter
