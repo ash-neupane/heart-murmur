@@ -6,6 +6,13 @@ def load_audio_segments(uris: List[str], segments: List[Tuple[int]]) -> Tuple[to
     """
     Loads the provided list of audio segments. 
     All audio must be single channel and must have the same sampling rate.
+
+    Returns:
+        tuple (X_t, fs)
+        X_t: 2D tensor of size (N_batch, N_frames)
+            where N_batch is the length of uris and segments requested.
+        fs: int, sampling rate
+            it requires all sampling rate to be the same
     """
     if len(uris) != len(segments):
         raise ValueError(f"Mismatching number of filenames ({len(uris)}) and segments ({len(segments)})")
@@ -31,8 +38,10 @@ def load_audio_segments(uris: List[str], segments: List[Tuple[int]]) -> Tuple[to
 def load_audio_segment(uri: Union[str, pathlib.Path], segment: Tuple[int]) -> Tuple[torch.Tensor, int]:
     """
     Loads the audio segment specified with (index_start, index_end) in `segment` from the given `uri`
-
-    Returns a tuple of signal and sampling rate, signal(x_t) :: N_channel x N_samples tensor
+    Preferred this over scipy because it allows loading with offset and frame slicing.
+    
+    Returns a tuple of signal and sampling rate, 
+    signal(x_t) is a 2D tensor of size N_channel x N_samples tensor
     """
     if not isinstance(uri, pathlib.Path):
         uri = pathlib.Path(uri)
