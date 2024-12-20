@@ -19,9 +19,7 @@ class SignalProcessor:
             - t_resolution: Time resolution of the spectrogram to generate, default 0.064 [sec]
             - f_lowcut: Lower cutoff frequency of bandpass filter, default 20 [Hz]
             - f_highcut: Higher cutoff frequency of bandpass filter, default 100 [Hz]
-            - filter_order: The order of butterworth bandpass filter, default 4 
-        
-        Also initializes the spectrogram transform from torchaudio.transforms
+            - filter_order: The order of butterworth bandpass filter, default 4         
         """
         self.fs = fs
 
