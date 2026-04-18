@@ -6,7 +6,7 @@ from typing import Union
 
 class SignalProcessor:
     def __init__(
-            self, 
+            self,
             fs: int=4000,
             t_resolution: float=0.064,
             f_lowcut: int=20,

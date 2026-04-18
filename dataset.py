@@ -9,7 +9,6 @@ class HeartSoundDataset(Dataset):
     """
     Manages the heart sound dataset for murmur type detection. 
     Allows balanced sampling.
-    Doesn't actually load the audio files.
     """
     
     def __init__(self, data_df: pd.DataFrame):

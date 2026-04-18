@@ -26,10 +26,7 @@ class RecordingRegistry:
 
     def __init__(self, root_dir: str):
         """
-
-        self.data_dir: the root directory with all data (circor_dir/)
-        self.metadata_df: aggregated metadata from circor_data/training_data.csv
-                          then cleaned up and reorganized for murmur type classification
+        self.root_dir: the root directory with all data (circor_dir/)
         """
         self.root_dir = pathlib.Path(root_dir)
         self.data_dir = self.root_dir / "training_data"
@@ -76,7 +73,7 @@ class RecordingRegistry:
         
     def _load_annotations(self, filepath: pathlib.Path, additional_cols: List[str]=[]):
         """
-        Will load the metadata file, create labels for MurmurType = Systolic vs. Diastolic (& Absent)
+        Will load the metadata file, create labels for MurmurType = Systolic vs. Diastolic
         Then return a clean dataframe with the id columns, demographic info, and label columns
         Any additional columns required to keep can be requested with `additional_cols`.
         """
